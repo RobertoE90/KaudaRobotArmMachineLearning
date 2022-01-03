@@ -24,7 +24,7 @@ public class KaudaArmController : MonoBehaviour
     public struct MotorsControllers
     {
         [Range(0, 1)] public float NormalizedRotationValue;
-        public NemaMotorController Motor;
+        public INemaMotorController Motor;
 
         public void ApplyValueToMotor()
         {

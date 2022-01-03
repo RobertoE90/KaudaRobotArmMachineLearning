@@ -1,17 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class NemaMotorController : MonoBehaviour
+
+/// <summary>
+/// Used for rotations that will not use the closest rotation to go from initial rotation to the target rotation
+/// </summary>
+public class NemaMotorControllerClampedAngleRotator : NemaMotorControllerBase
 {
-    [SerializeField] private RotationAxis _rotationAxis;
-    [SerializeField] private float _rotationSpeed;
+    
     [Space(20)]
     [SerializeField] private float _minAngle;
     [SerializeField] private float _maxAngle;
 
-    [SerializeField] private bool _debug = false; 
     private float _currentNormalizedRotationValue;
     private float _targetNormalizedRotationValue;
     private float _rotationStep;
@@ -23,12 +23,12 @@ public class NemaMotorController : MonoBehaviour
         SetJointRotation(_currentNormalizedRotationValue);
     }
 
-    public void SetTargetValue(float value)
+    public override void SetTargetValue(float value)
     {
         _targetNormalizedRotationValue = value;
     }
 
-    public void Tick()
+    public override void Tick()
     {
         var incrementSign = (_currentNormalizedRotationValue < _targetNormalizedRotationValue) ? 1 : -1;
 
@@ -48,25 +48,6 @@ public class NemaMotorController : MonoBehaviour
     {
         var rotationValue = Mathf.Lerp(_minAngle, _maxAngle, normalizedRotation) * GetRotationAxis();
         transform.localRotation = Quaternion.Euler(rotationValue);
-    }
-
-    private Vector3 GetRotationAxis()
-    {
-        var result = Vector3.zero;
-        switch (_rotationAxis)
-        {
-            case RotationAxis.XAxis:
-                result = Vector3.right;
-                break;
-            case RotationAxis.YAxis:
-                result = Vector3.up;
-                break;
-            case RotationAxis.ZAxis:
-                result = Vector3.forward;
-                break;
-        }
-
-        return result;
     }
 }
 
