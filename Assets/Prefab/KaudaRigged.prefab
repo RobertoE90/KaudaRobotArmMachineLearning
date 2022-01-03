@@ -258,7 +258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7987150504147890201}
-  - component: {fileID: 4252931355583822298}
+  - component: {fileID: 8110559864122072539}
   m_Layer: 0
   m_Name: ElbowRotationY
   m_TagString: Untagged
@@ -281,7 +281,7 @@ Transform:
   m_Father: {fileID: 8066688733611894203}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
---- !u!114 &4252931355583822298
+--- !u!114 &8110559864122072539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -290,14 +290,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1454276562261345685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1f1426d839cf474ab0039ce6c7cf0f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 555fa11c2386a514fa33617f372184ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationAxis: 1
   _rotationSpeed: 20
-  _minAngle: 0
-  _maxAngle: 360
-  _debug: 0
 --- !u!1 &1965368369750614670
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,7 +569,6 @@ MonoBehaviour:
   _rotationSpeed: 30
   _minAngle: -90
   _maxAngle: 110
-  _debug: 0
 --- !u!1 &3043523241596097175
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,7 +972,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2420989989019832471}
-  - component: {fileID: 1283124644617602892}
+  - component: {fileID: 6852912871630902082}
   m_Layer: 0
   m_Name: ShowlderRotationY
   m_TagString: Untagged
@@ -999,7 +995,7 @@ Transform:
   m_Father: {fileID: 41916795635058482}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1283124644617602892
+--- !u!114 &6852912871630902082
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1008,14 +1004,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5264916284773756079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1f1426d839cf474ab0039ce6c7cf0f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 555fa11c2386a514fa33617f372184ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationAxis: 1
   _rotationSpeed: 60
-  _minAngle: 0
-  _maxAngle: 360
-  _debug: 0
 --- !u!1 &5389481178062020206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,7 +1178,6 @@ MonoBehaviour:
   _rotationSpeed: 30
   _minAngle: -95
   _maxAngle: 110
-  _debug: 0
 --- !u!1 &7145269650705816179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,13 +1531,13 @@ MonoBehaviour:
   _openCloseHand: 0
   _armMotorsControllers:
   - NormalizedRotationValue: 0
-    Motor: {fileID: 1283124644617602892}
+    Motor: {fileID: 6852912871630902082}
   - NormalizedRotationValue: 0
     Motor: {fileID: 2881430253322023469}
   - NormalizedRotationValue: 0
     Motor: {fileID: 4284097436940740755}
   - NormalizedRotationValue: 0
-    Motor: {fileID: 4252931355583822298}
+    Motor: {fileID: 8110559864122072539}
   - NormalizedRotationValue: 0
     Motor: {fileID: 8910385783439449089}
   _animator: {fileID: 589027680172001039}
@@ -1680,7 +1672,6 @@ MonoBehaviour:
   _rotationSpeed: 30
   _minAngle: -85
   _maxAngle: 85
-  _debug: 0
 --- !u!1 &8539528890819329267
 GameObject:
   m_ObjectHideFlags: 0
