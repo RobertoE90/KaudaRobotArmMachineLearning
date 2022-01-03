@@ -294,9 +294,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationAxis: 1
-  _rotationSpeed: 2
+  _rotationSpeed: 20
   _minAngle: 0
   _maxAngle: 360
+  _debug: 0
 --- !u!1 &1965368369750614670
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,9 +569,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationAxis: 2
-  _rotationSpeed: 3
+  _rotationSpeed: 30
   _minAngle: -90
   _maxAngle: 110
+  _debug: 0
 --- !u!1 &3043523241596097175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,9 +1012,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationAxis: 1
-  _rotationSpeed: 6
+  _rotationSpeed: 60
   _minAngle: 0
   _maxAngle: 360
+  _debug: 0
 --- !u!1 &5389481178062020206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,9 +1182,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationAxis: 2
-  _rotationSpeed: 3
+  _rotationSpeed: 30
   _minAngle: -95
   _maxAngle: 110
+  _debug: 0
 --- !u!1 &7145269650705816179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,9 +1677,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationAxis: 2
-  _rotationSpeed: 3
+  _rotationSpeed: 30
   _minAngle: -85
   _maxAngle: 85
+  _debug: 0
 --- !u!1 &8539528890819329267
 GameObject:
   m_ObjectHideFlags: 0
