@@ -18,9 +18,27 @@ public class NemaMotorControllerClampedAngleRotator : NemaMotorControllerBase
 
     private void Awake()
     {
-        _currentNormalizedRotationValue = 0;
         _rotationStep = _rotationSpeed / (_maxAngle - _minAngle);
+    }
+
+    public override void InitRotationAt(float normalizedRotation)
+    {
+        _currentNormalizedRotationValue = normalizedRotation;
         SetJointRotation(_currentNormalizedRotationValue);
+    }
+
+    public override void DiscreteControl(int direction)
+    {
+        if (direction == 0)
+        {
+            _targetNormalizedRotationValue = _currentNormalizedRotationValue;
+            return;
+        }
+
+        _targetNormalizedRotationValue = _currentNormalizedRotationValue +
+                                         (_rotationStep * Time.deltaTime * 3 * Math.Sign(direction));
+        
+        _targetNormalizedRotationValue = Mathf.Clamp01(_targetNormalizedRotationValue);
     }
 
     public override void SetTargetValue(float value)
@@ -28,20 +46,25 @@ public class NemaMotorControllerClampedAngleRotator : NemaMotorControllerBase
         _targetNormalizedRotationValue = value;
     }
 
-    public override void Tick()
+    public override float Tick()
     {
         var incrementSign = (_currentNormalizedRotationValue < _targetNormalizedRotationValue) ? 1 : -1;
 
+        var tickValue = 0f;
+
         if(Mathf.Abs(_currentNormalizedRotationValue - _targetNormalizedRotationValue) > _rotationStep * Time.deltaTime)
         {
-            _currentNormalizedRotationValue += (incrementSign) * _rotationStep * Time.deltaTime;
+            tickValue = _rotationStep * Time.deltaTime;
+            _currentNormalizedRotationValue += (incrementSign) * tickValue;
         }
         else
         {
+            tickValue = Mathf.Abs(_currentNormalizedRotationValue - _targetNormalizedRotationValue);
             _currentNormalizedRotationValue = _targetNormalizedRotationValue;
         }
 
         SetJointRotation(_currentNormalizedRotationValue);
+        return tickValue * (_maxAngle - _minAngle);
     }
 
     private void SetJointRotation(float normalizedRotation)
@@ -49,12 +72,13 @@ public class NemaMotorControllerClampedAngleRotator : NemaMotorControllerBase
         var rotationValue = Mathf.Lerp(_minAngle, _maxAngle, normalizedRotation) * GetRotationAxis();
         transform.localRotation = Quaternion.Euler(rotationValue);
     }
+
 }
 
 [Serializable]
 public enum RotationAxis
 {
-    XAxis,
+    XAxis = 0,
     YAxis,
     ZAxis
 }

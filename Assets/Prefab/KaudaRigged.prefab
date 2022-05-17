@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135265998341378611}
   m_LocalRotation: {x: 0, y: -1.2246469e-16, z: -0, w: 1}
-  m_LocalPosition: {x: -5.3290704e-17, y: 0.42871127, z: -4.7739588e-17}
+  m_LocalPosition: {x: -5.3290704e-17, y: 0.15, z: -4.7739588e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5225308951890952895}
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationAxis: 1
-  _rotationSpeed: 20
+  _rotationSpeed: 60
 --- !u!1 &1965368369750614670
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +368,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -566,9 +567,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationAxis: 2
-  _rotationSpeed: 30
+  _rotationSpeed: 60
   _minAngle: -90
-  _maxAngle: 110
+  _maxAngle: 130
 --- !u!1 &3043523241596097175
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +777,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4625550681723977510}
   m_LocalRotation: {x: -0, y: -1.2246469e-16, z: -0, w: 1}
-  m_LocalPosition: {x: -4.8849813e-17, y: 0.40275848, z: -4.2188474e-17}
+  m_LocalPosition: {x: -4.8849813e-17, y: 0.15, z: -4.2188474e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8066688733611894203}
@@ -917,6 +918,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1008,7 +1010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationAxis: 1
-  _rotationSpeed: 60
+  _rotationSpeed: 120
 --- !u!1 &5389481178062020206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationAxis: 2
-  _rotationSpeed: 30
+  _rotationSpeed: 60
   _minAngle: -95
   _maxAngle: 110
 --- !u!1 &7145269650705816179
@@ -1220,6 +1222,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1433,6 +1436,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1490,6 +1494,8 @@ GameObject:
   - component: {fileID: 7378488404798322184}
   - component: {fileID: 1521898479862124622}
   - component: {fileID: 589027680172001039}
+  - component: {fileID: 9170842038874945862}
+  - component: {fileID: 375334123244682214}
   m_Layer: 0
   m_Name: KaudaRigged
   m_TagString: Untagged
@@ -1528,19 +1534,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57dde817f2317d746a8334c47c67ca2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
+  _actionSlider: 0000000000000000000000000000000000000000
+  _isTraining: 0
+  _targetIKPoint: {fileID: 0}
+  _armEndTransform: {fileID: 5225308951890952895}
+  _forearmTransform: {fileID: 7987150504147890201}
+  _defaultInRange:
+    CenterDistanceThreshold: 0.125
+    OrientationThreshold: 0.15
+    RepeatFailCounter: 0
+  _lessonsList:
+  - CenterDistanceThreshold: 0.15
+    OrientationThreshold: 0.1
+    RepeatFailCounter: 5
+  - CenterDistanceThreshold: 0.125
+    OrientationThreshold: 0.075
+    RepeatFailCounter: 7
+  - CenterDistanceThreshold: 0.1
+    OrientationThreshold: 0.075
+    RepeatFailCounter: 7
+  - CenterDistanceThreshold: 0.1
+    OrientationThreshold: 0.05
+    RepeatFailCounter: 10
+  - CenterDistanceThreshold: 0.1
+    OrientationThreshold: 0.05
+    RepeatFailCounter: 10
   _openCloseHand: 0
   _armMotorsControllers:
-  - NormalizedRotationValue: 0
+  - ActivateMotor: 0
+    NormalizedRotationValue: 0
     Motor: {fileID: 6852912871630902082}
-  - NormalizedRotationValue: 0
+  - ActivateMotor: 0
+    NormalizedRotationValue: 0
     Motor: {fileID: 2881430253322023469}
-  - NormalizedRotationValue: 0
+  - ActivateMotor: 0
+    NormalizedRotationValue: 0
     Motor: {fileID: 4284097436940740755}
-  - NormalizedRotationValue: 0
+  - ActivateMotor: 0
+    NormalizedRotationValue: 0
     Motor: {fileID: 8110559864122072539}
-  - NormalizedRotationValue: 0
+  - ActivateMotor: 0
+    NormalizedRotationValue: 0
     Motor: {fileID: 8910385783439449089}
   _animator: {fileID: 589027680172001039}
+  _debugObservations: 0
 --- !u!95 &589027680172001039
 Animator:
   serializedVersion: 3
@@ -1560,6 +1601,46 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9170842038874945862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867358300162485426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BrainParameters:
+    VectorObservationSize: 16
+    NumStackedVectorObservations: 2
+    VectorActionSize: 0300000003000000030000000300000003000000
+    VectorActionDescriptions: []
+    VectorActionSpaceType: 0
+  m_Model: {fileID: 0}
+  m_InferenceDevice: 1
+  m_BehaviorType: 0
+  m_BehaviorName: KaudaArm
+  TeamId: 0
+  m_UseChildSensors: 1
+  m_UseChildActuators: 1
+  m_ObservableAttributeHandling: 0
+--- !u!114 &375334123244682214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867358300162485426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DecisionPeriod: 5
+  TakeActionsBetweenDecisions: 1
 --- !u!1 &8005036595666588846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,9 +1750,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationAxis: 2
-  _rotationSpeed: 30
-  _minAngle: -85
-  _maxAngle: 85
+  _rotationSpeed: 70
+  _minAngle: -100
+  _maxAngle: 100
 --- !u!1 &8539528890819329267
 GameObject:
   m_ObjectHideFlags: 0
