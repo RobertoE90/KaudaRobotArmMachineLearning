@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6582377876331111279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6582377876331111265}
+  - component: {fileID: 6582377876331111264}
+  m_Layer: 0
+  m_Name: TrainingEnvironment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6582377876331111265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582377876331111279}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6582377876933389111}
+  - {fileID: 4412654424761522380}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6582377876331111264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582377876331111279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af727562e87aa0245979a9bdd427bba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _kaudaArmController: {fileID: 5640639060969225866}
+  _ikTargetObject: {fileID: 6582377876933389111}
+--- !u!1 &6582377876933389110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6582377876933389111}
+  m_Layer: 0
+  m_Name: IKGoal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6582377876933389111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582377876933389110}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.251, y: 0.785, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6582377876331111265}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6582377875576516292
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6582377876331111265}
+    m_Modifications:
+    - target: {fileID: 1521898479862124622, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+      propertyPath: _isTraining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521898479862124622, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+      propertyPath: _targetIKPoint
+      value: 
+      objectReference: {fileID: 6582377876933389111}
+    - target: {fileID: 1521898479862124622, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+      propertyPath: _armMotorsControllers.Array.data[2].NormalizedRotationValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378488404798322184, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378488404798322184, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378488404798322184, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.052
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378488404798322184, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378488404798322184, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378488404798322184, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 2.1856166e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378488404798322184, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -6.005847e-18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378488404798322184, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1.3126479e-33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378488404798322184, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378488404798322184, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378488404798322184, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867358300162485426, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+      propertyPath: m_Name
+      value: KaudaRigged
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+--- !u!4 &4412654424761522380 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7378488404798322184, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+  m_PrefabInstance: {fileID: 6582377875576516292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5640639060969225866 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1521898479862124622, guid: c1b1e38f56bc26c4687f6c818748e386, type: 3}
+  m_PrefabInstance: {fileID: 6582377875576516292}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57dde817f2317d746a8334c47c67ca2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
